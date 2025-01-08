@@ -1,0 +1,39 @@
+######################
+#### DEPENDENCIES ####
+######################
+@import 'EXT:mask/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/Styles/Twb5/setup.typoscript'
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+page {
+    includeCSS {
+        theme = EXT:biobauernhof/Resources/Public/Scss/Theme/theme.scss
+        adobeFonts = https://use.typekit.net/mrs3jak.css
+        header = EXT:biobauernhof/Resources/Public/Scss/Theme/header.scss
+        button = EXT:biobauernhof/Resources/Public/Scss/Theme/button.scss
+        recipe = EXT:your_extension/Resources/Public/Scss/Theme/recipe.css
+        footer = EXT:biobauernhof/Resources/Public/Scss/Theme/footer.scss
+        recipelist = EXT:your_extension/Resources/Public/Scss/Theme/recipelist.css
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        biobauernhof_scripts = EXT:biobauernhof/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}

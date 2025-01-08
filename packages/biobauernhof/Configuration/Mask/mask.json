@@ -1,0 +1,278 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "infobox": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_description",
+                        "tx_mask_elements",
+                        "tx_mask_link",
+                        "tx_mask_linklabel"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "infobox",
+                    "label": "Infobox",
+                    "labels": [
+                        "Description",
+                        "Elements",
+                        "Link",
+                        "Linklabel"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                },
+                "products": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_image",
+                        "tx_mask_titel",
+                        "tx_mask_descriptio",
+                        "tx_mask_ingridient",
+                        "tx_mask_list"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "products",
+                    "label": "Products",
+                    "labels": [
+                        "ll_image",
+                        "ll_titel",
+                        "ll_descriptio",
+                        "ll_ingridient",
+                        "ll_list"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                }
+            },
+            "sql": {
+                "tx_mask_descriptio": {
+                    "tt_content": {
+                        "tx_mask_descriptio": "mediumtext"
+                    }
+                },
+                "tx_mask_description": {
+                    "tt_content": {
+                        "tx_mask_description": "mediumtext"
+                    }
+                },
+                "tx_mask_elements": {
+                    "tt_content": {
+                        "tx_mask_elements": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_image": {
+                    "tt_content": {
+                        "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_ingridient": {
+                    "tt_content": {
+                        "tx_mask_ingridient": "mediumtext"
+                    }
+                },
+                "tx_mask_link": {
+                    "tt_content": {
+                        "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_linklabel": {
+                    "tt_content": {
+                        "tx_mask_linklabel": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_list": {
+                    "tt_content": {
+                        "tx_mask_list": "mediumtext"
+                    }
+                },
+                "tx_mask_titel": {
+                    "tt_content": {
+                        "tx_mask_titel": "mediumtext"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_descriptio": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_descriptio",
+                    "key": "descriptio",
+                    "type": "text"
+                },
+                "tx_mask_description": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_description",
+                    "key": "description",
+                    "type": "richtext"
+                },
+                "tx_mask_elements": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "minitems": "1",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_elements",
+                    "key": "elements",
+                    "type": "inline"
+                },
+                "tx_mask_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileByUrlAllowed": 1,
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "minitems": ""
+                    },
+                    "fullKey": "tx_mask_image",
+                    "key": "image",
+                    "type": "media"
+                },
+                "tx_mask_ingridient": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_ingridient",
+                    "key": "ingridient",
+                    "type": "text"
+                },
+                "tx_mask_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "fullKey": "tx_mask_link",
+                    "key": "link",
+                    "type": "link"
+                },
+                "tx_mask_linklabel": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_linklabel",
+                    "key": "linklabel",
+                    "type": "string"
+                },
+                "tx_mask_list": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_list",
+                    "key": "list",
+                    "type": "text"
+                },
+                "tx_mask_titel": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_titel",
+                    "key": "titel",
+                    "type": "text"
+                }
+            }
+        },
+        "tx_mask_elements": {
+            "sql": {
+                "tx_mask_key": {
+                    "tx_mask_elements": {
+                        "tx_mask_key": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_value": {
+                    "tx_mask_elements": {
+                        "tx_mask_value": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_key": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_key",
+                    "inlineParent": "tx_mask_elements",
+                    "key": "key",
+                    "label": "Key",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_value": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_value",
+                    "inlineParent": "tx_mask_elements",
+                    "key": "value",
+                    "label": "Value",
+                    "order": 2,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

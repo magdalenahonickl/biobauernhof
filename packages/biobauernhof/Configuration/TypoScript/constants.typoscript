@@ -1,0 +1,69 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:biobauernhof/Resources/Public/Images/logo.svg
+        fileInverted = EXT:biobauernhof/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = biobauernhof
+        linktitle = biobauernhof
+    }
+    favicon {
+        file = EXT:biobauernhof/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:biobauernhof/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:biobauernhof/Resources/Private/Partials/Page/
+        templateRootPath = EXT:biobauernhof/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:biobauernhof/Resources/Private/Layouts/
+        partialRootPath = EXT:biobauernhof/Resources/Private/Partials/
+        templateRootPath = EXT:biobauernhof/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:biobauernhof/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:biobauernhof/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:biobauernhof/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}
+
+#footer navigation TODO
+
+#news
+plugin.tx_news.view.twb5{
+    templateRootPath = EXT:biobauernhof/Resources/Private/Templates/
+    partialRootPath = EXT:biobauernhof/Resources/Private/Partials/
+    layoutRootPath = EXT:biobauernhof/Resources/Private/Layouts/
+}
