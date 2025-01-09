@@ -18,7 +18,8 @@ page {
         button = EXT:biobauernhof/Resources/Public/Scss/Theme/button.scss
         recipe = EXT:your_extension/Resources/Public/Scss/Theme/recipe.css
         footer = EXT:biobauernhof/Resources/Public/Scss/Theme/footer.scss
-        recipelist = EXT:your_extension/Resources/Public/Scss/Theme/recipelist.css
+        recipelist = EXT:your_extension/Resources/Public/Scss/Theme/recipelist.scss
+        recipelist = EXT:your_extension/Resources/Public/Scss/Theme/product.css
     }
 
     includeJSLibs {
@@ -35,5 +36,61 @@ page {
 
     includeJSFooter {
         biobauernhof_scripts = EXT:biobauernhof/Resources/Public/JavaScript/Dist/scripts.js
+        slider = EXT:biobauernhof/Resources/Public/JavaScript/slider.js
+    }
+}
+
+#mask slider damit eigenes html genommen wird
+tt_content.mask_slider = FLUIDTEMPLATE
+tt_content.mask_slider {
+    templateName = Slider
+    templateRootPaths {
+        10 = EXT:biobauernhof/Resources/Private/Mask/Frontend/Templates/
+    }
+    partialRootPaths {
+        10 = EXT:biobauernhof/Resources/Private/Mask/Frontend/Partials/
+    }
+    layoutRootPaths {
+        10 = EXT:biobauernhof/Resources/Private/Mask/Frontend/Layouts/
+    }
+}
+
+
+#mask product damit eigenes html
+tt_content.mask_product = FLUIDTEMPLATE
+tt_content.mask_product{
+    templateName = Product
+    templateRootPaths {
+        20 = EXT:biobauernhof/Resources/Private/Mask/Frontend/Templates/
+    }
+    partialRootPaths {
+        20 = EXT:biobauernhof/Resources/Private/Mask/Frontend/Partials/
+    }
+    layoutRootPaths {
+        20 = EXT:biobauernhof/Resources/Private/Mask/Frontend/Layouts/
+    }
+}
+
+# Definiere die Header Layouts
+lib.contentElement.headers = COA
+lib.contentElement.headers {
+    30 = TEXT
+    30 {
+        field = header
+        wrap = <h1>|</h1>
+    }
+
+    31 = TEXT
+    31 {
+        field = subheader
+        wrap = <h2>|</h2>
+    }
+
+    # Layout für "Reverted" Header und Subheader (Option 30)
+    32 = TEXT
+    32 {
+        data = TSFE:page|header_layout
+        wrap = <div class="reverted">|</div>
+        if.isTrue = 11
     }
 }
