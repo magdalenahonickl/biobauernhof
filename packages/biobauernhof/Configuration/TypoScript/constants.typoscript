@@ -67,3 +67,6 @@ plugin.tx_news.view.twb5{
     partialRootPath = EXT:biobauernhof/Resources/Private/Partials/
     layoutRootPath = EXT:biobauernhof/Resources/Private/Layouts/
 }
+
+#login damit auch weiß, dass von uns nehmen soll
+plugin.tx_felogin_login.view.templateRootPath = EXT:biobauernhof/Resources/Private/Templates/ContentElements/

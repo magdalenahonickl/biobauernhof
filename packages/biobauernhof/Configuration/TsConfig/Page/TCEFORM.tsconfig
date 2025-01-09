@@ -6,6 +6,9 @@ TCEFORM {
 
     }
     tt_content {
+        layout.addItems.13 = Custom Home-News
+
+        header_layout.addItems.11 = Revert Header and Subheader
 
     }
 }
