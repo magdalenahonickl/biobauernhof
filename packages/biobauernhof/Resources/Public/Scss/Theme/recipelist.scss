@@ -1,0 +1,125 @@
+@import "variables";
+
+// ======= Styling für Ansicht RecipeItem (Anzeige Recipes) =======
+.news-list-view .template-layout-2 {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .recipe-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(33.333% - 20px); // Drei Items nebeneinander
+    box-sizing: border-box; // Padding und Border werden berücksichtigt
+    overflow: hidden;
+    border-radius: 10px; // Optional: Abgerundete Ecken
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $accent; // Hintergrundfarbe der Blöcke
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    // Bild oben
+    .recipe-image {
+      width: 100%; // Bild füllt den Block horizontal aus
+      height: auto; // Automatische Höhe basierend auf dem Bildverhältnis
+      aspect-ratio: 16 / 9; // Stellt sicher, dass das Bild ein festes Seitenverhältnis hat
+      object-fit: cover; // Das Bild wird proportional zugeschnitten
+      border-radius: 10px 10px 0 0; // Abgerundete Ecken nur oben
+    }
+
+    // Text unten
+    .recipe-info {
+      padding: 20px; // Innenabstand für den Textbereich
+      flex-grow: 1; // Textbereich nimmt verfügbaren Platz ein, falls nötig
+      text-align: center; // Zentrierter Text
+
+      .recipe-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .recipe-meta {
+        font-size: 0.9rem;
+        color: #777;
+
+        .recipe-time {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .time-icon {
+            margin-right: 5px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsives Design
+  @media (max-width: 991px) { // Mittlere Bildschirme
+    .recipe-item {
+      flex: 1 1 calc(50% - 20px); // Zwei Items nebeneinander
+    }
+  }
+
+  @media (max-width: 767px) { // Kleine Bildschirme
+    .recipe-item {
+      flex: 1 1 100%; // Ein Item pro Zeile
+    }
+  }
+}
+
+
+//======= Styling für Ansicht HomeItems (Anzeige Home) =======
+.news-list-view .template-layout-3{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .recipe-item {
+    //flex: 1 1 calc(33.33% - 20px); /* Drei gleichmäßige Spalten */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .recipe-image {
+    width: 100%;
+    height: auto; /* Seitenverhältnis beibehalten */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .recipe-info {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .recipe-title {
+    font-family: 'Rig Sans', Arial, sans-serif;
+    color: #000000;
+    font-weight: 700; /* Bold */
+    font-size: 20px;
+  }
+
+  .recipe-meta {
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  .recipe-time,
+  .recipe-season {
+    margin-right: 10px;
+  }
+}

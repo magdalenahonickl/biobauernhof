@@ -1,0 +1,62 @@
+//
+// Variables
+//
+@import "variables";
+
+//
+// Import needed Bootstrap Package Files
+//
+@import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
+
+@import "header";
+@import "button";
+@import "footer";
+@import "recipelist";
+@import "detailrecipe";
+@import "login";
+@import "slider";
+@import "variables";
+@import "table";
+@import "icongroup";
+@import "product";
+
+// ======= Grunddesign =======
+body {
+  background-color: $accent;
+  font-family: 'Rig Sans', Arial, sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+}
+// ======= Headline 1 =======
+h1, h2.element-header.h1 {
+  font-family: 'Rumba Extra', Arial, sans-serif;
+  color: $primary;
+  font-weight: 400; /* Regular */
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+// ======= Headline 2 =======
+h2, h3.element-subheader.h2 {
+  font-family: 'Rumba Extra', Arial, sans-serif;
+  color: $secondary;
+  font-weight: 400; /* Regular */
+  font-size: 39px;
+  letter-spacing: 2px;
+}
+
+// ======= Headline 3 =======
+h3 {
+  font-family: 'Rig Sans', Arial, sans-serif;
+  color: #000000;
+  font-weight: 700; /* Bold */
+  font-size: 20px;
+}
+
+// ======= Hintergrundfarbe =======
+#page-content{
+  background-color: $accent;
+}
+

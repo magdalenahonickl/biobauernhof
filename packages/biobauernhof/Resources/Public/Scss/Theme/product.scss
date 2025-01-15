@@ -1,0 +1,80 @@
+@import "variables";
+
+//======= Styling für Produkte =======
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fdf6e3;
+  font-family: Arial, sans-serif;
+
+  .product-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    .product-image {
+      flex: 0 0 40%;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .image-description {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #555;
+      }
+    }
+
+    // ======= Text Styling =======
+    .product-text {
+      flex: 1;
+      padding: 10px;
+
+      h2 {
+        font-family: 'Rumba Extra', Arial, sans-serif;
+        color: $secondary;
+        font-weight: 400;
+        font-size: 30px;
+        letter-spacing: 2px;
+      }
+
+      h3 {
+        font-family: 'Rig Sans', Arial, sans-serif;
+        color: #000000;
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      p {
+        background-color: $accent;
+        font-family: 'Rig Sans', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 30px;
+        color: #000000;
+      }
+    }
+  }
+
+//======= Responsive Design für mittlere und kleine Bildschirme =======
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-image {
+    flex: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .product-text {
+    text-align: center;
+  }
+}
+}

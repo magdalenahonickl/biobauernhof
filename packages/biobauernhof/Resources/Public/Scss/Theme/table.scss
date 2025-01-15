@@ -1,0 +1,31 @@
+@import "variables";
+
+
+// ======= Tabelle Styling -> leider funktioniert bei Costumer nicht =======
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: $accent;
+}
+
+
+table th,
+table td {
+  border: none;
+  padding: 10px;
+  text-align: left;
+}
+
+table tr {
+  border-bottom: 1px solid #000; // Schwarze horizontale Linie
+}
+
+// ======= Tabelle header =======
+table th {
+  font-family: 'Rig Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  background-color: transparent;
+}

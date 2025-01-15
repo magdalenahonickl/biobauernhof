@@ -1,0 +1,33 @@
+//
+// Variables
+//
+@import "variables";
+
+//
+// Import needed Bootstrap Package Files
+//
+@import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
+
+.btn-primary{
+  font-family: 'Rig Sans', Arial, sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 20px;
+  line-height: 30px;
+  color: $primary;
+  background-color: $secondary;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $primary;
+    color: $accent;
+    transition: all 0.3s ease
+  }
+
+  &:active{
+    background-color: $primary;
+    color: $accent;
+    transition: all 0.3s ease
+  }
+}
