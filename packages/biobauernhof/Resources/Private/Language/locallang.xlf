@@ -6,6 +6,13 @@
             <authorEmail>s2310456006@fhooe.at</authorEmail>
         </header>
         <body>
+        <trans-unit id="all_categories">
+           <source>All categories</source>
+        </trans-unit>
+        <trans-unit id="relatedNews">
+                <source>related recipes</source>
+                <target>ähnliche Rezepte</target>
+        </trans-unit>
         </body>
     </file>
 </xliff>

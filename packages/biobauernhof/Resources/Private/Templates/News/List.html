@@ -9,22 +9,45 @@
 
 <f:section name="content">
     <!--TYPO3SEARCH_end-->
-    <h1>Rezeptliste</h1>
     <f:if condition="{news}">
         <f:then>
             <div class="news-list-view container" id="news-container-{contentObjectData.uid}">
-                <div class="row">
-                    <f:for each="{news}" as="newsItem" iteration="iterator">
-                        <f:if condition="{settings.templateLayout} = 2">
-                            <f:then>
-                                <f:render partial="List/RecipeItem" arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
-                            </f:then>
-                            <f:else>
-                                <f:render partial="List/Item" arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </div>
+
+                <!-- Layout 2: Drei News nebeneinander -->
+                <f:if condition="{settings.templateLayout} == 2">
+                    <f:then>
+                        <div class="news-list-view layout-two">
+                            <div class="row">
+                                <f:for each="{news}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/RecipeItem" arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
+                                </f:for>
+                            </div>
+                        </div>
+                    </f:then>
+                </f:if>
+
+
+                <!-- Layout 3: News untereinander -->
+                <f:if condition="{settings.templateLayout} == 3">
+                    <f:then>
+                        <div class="news-list-view layout-three">
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <div class="recipe-item">
+                                    <f:render partial="List/HomeItem" arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
+                                </div>
+                            </f:for>
+                        </div>
+                    </f:then>
+                </f:if>
+
+                <!-- Standard-Layout, falls kein Layout definiert ist -->
+                <f:if condition="{settings.templateLayout} != 2 && {settings.templateLayout} != 3">
+                    <f:then>
+                        <f:render partial="List/Item" arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
+                    </f:then>
+                </f:if>
+
+                <!-- Pagination für Listenansicht -->
                 <f:if condition="{settings.list.paginate.insertBelow}">
                     <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
                 </f:if>

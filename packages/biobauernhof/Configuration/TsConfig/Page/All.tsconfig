@@ -9,3 +9,7 @@
 tx_news.templateLayouts{
     2 = Rezept
 }
+
+tx_news.templateLayouts{
+    3 = ListHome
+}

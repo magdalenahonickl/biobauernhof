@@ -12,6 +12,11 @@
             <trans-unit id="backend_layout.column.normal">
                 <source>Normal</source>
             </trans-unit>
+            <trans-unit id="all_categories">
+                <source>All Categories</source>
+                <target>Alle anzeigen</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

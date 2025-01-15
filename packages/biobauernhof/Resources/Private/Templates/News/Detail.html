@@ -24,11 +24,15 @@
     <!-- =======================
          Tabelle und Erklärung
     ========================= -->
+    <div class="news-table-wrap">
     <div class="recipe-details">
+        <f:if condition="{newsItem.contentElements}">
+            <!-- content elements -->
+            <f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+        </f:if>
         <div class="row">
-            <!-- Tabelle links -->
-            <div class="col-md-6">
-                <h2>Rezeptdetails</h2>
+            <!-- Tabelle links (ein Drittel der Breite) -->
+            <div class="col-md-4">
                 <f:if condition="{newsItem.contentElements}">
                     <div class="news-table-wrap">
                         <f:for each="{newsItem.contentElements}" as="contentElement">
@@ -37,27 +41,56 @@
                         </f:for>
                     </div>
                 </f:if>
-
             </div>
-
-            <!-- Text rechts -->
-            <div class="col-md-6">
-                <h2>Erklärung</h2>
+            <!-- Text rechts (zwei Drittel der Breite) -->
+            <div class="col-md-8">
                 <div class="recipe-explanation">
                     <f:format.html>{newsItem.bodytext}</f:format.html>
                 </div>
             </div>
         </div>
+        </div>
     </div>
+
 
     <!-- =======================
          Zurück-Button
     ========================= -->
     <div class="back-button">
-        <f:link.page pageUid="{newsItem.previousPageUid}" title="Zurück zur Übersicht">
-            <button class="btn btn-primary">Zurück</button>
+        <f:link.page pageUid="18" title="Back to Recipes">
+            <button class="btn btn-primary">  <  </button>
         </f:link.page>
     </div>
+
+    <!-- =======================
+         related news
+    ========================= -->
+    <f:if condition="{newsItem.related}">
+        <div class="related-news">
+            <h3>related Recipes
+                <f:translate key="relatedNews" extensionName="deine_extension" /></h3>
+            <ul>
+                <f:for each="{newsItem.related}" as="relatedNews">
+                    <li>
+                        <a href="{relatedNews.path}" title="{relatedNews.title}">
+                            <!-- Bild anzeigen -->
+                            <f:if condition="{relatedNews.media}">
+                                <f:for each="{relatedNews.media}" as="mediaItem" iteration="iterator">
+                                    <f:if condition="{iterator.isFirst}">
+                                        <f:image image="{mediaItem}" alt="{relatedNews.title}" maxWidth="150" maxHeight="150" />
+                                    </f:if>
+                                </f:for>
+                            </f:if>
+                            <!-- Titel der News -->
+                            <span>{relatedNews.title}</span>
+                        </a>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </f:if>
+
+
 
 </f:section>
 

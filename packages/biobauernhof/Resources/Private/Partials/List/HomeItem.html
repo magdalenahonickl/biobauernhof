@@ -1,0 +1,24 @@
+<div class="row news-list-view">
+    <div class="col-md-4 recipe-item">
+        <n:link newsItem="{newsItem}" settings="{settings}">
+            <f:if condition="{newsItem.mediaPreviews}">
+                <f:media class="img-fluid recipe-image" file="{newsItem.mediaPreviews.0}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" />
+            </f:if>
+        </n:link>
+        <div class="recipe-info">
+            <h3 class="recipe-title">
+                <n:link newsItem="{newsItem}" settings="{settings}">
+                    {newsItem.title} <span class="recipe-link-arrow"> &gt; </span>
+                </n:link>
+            </h3>
+            <div class="recipe-meta">
+                <f:if condition="{newsItem.duration}">
+                    <span class="recipe-time">{newsItem.duration} min</span>
+                </f:if>
+                <f:if condition="{newsItem.categories}">
+                    <span class="recipe-season">{newsItem.categories.0.title}</span>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="product-container">
+        <!-- Bild-Bereich -->
+        <div class="product-image">
+            <f:for each="{data.tx_mask_image}" as="file">
+                <f:media file="{file}" width="200" alt="{file.alternative}" />
+                <p class="image-description">{file.description}</p>
+            </f:for>
+        </div>
+
+        <!-- Text-Bereich -->
+        <div class="product-text">
+            <f:if condition="{data.tx_mask_header}">
+                <h2>{data.tx_mask_header -> f:format.nl2br()}</h2>
+            </f:if>
+            <f:if condition="{data.tx_mask_descriptio}">
+                <p>{data.tx_mask_descriptio -> f:format.nl2br()}</p>
+            </f:if>
+            <f:if condition="{data.tx_mask_ingridientshead}">
+                <h3>{data.tx_mask_ingridientshead -> f:format.nl2br()}</h3>
+            </f:if>
+            <f:if condition="{data.tx_mask_ingridients}">
+                <p>{data.tx_mask_ingridients -> f:format.nl2br()}</p>
+            </f:if>
+            <f:if condition="{data.tx_mask_gethead}">
+                <h3>{data.tx_mask_gethead -> f:format.nl2br()}</h3>
+            </f:if>
+            <f:if condition="{data.tx_mask_get}">
+                <p>{data.tx_mask_get -> f:format.nl2br()}</p>
+            </f:if>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+	<html
+	xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="General" />
+	<f:section name="content">
+		<div class="news-search-form" id="advanced-search">
+			<f:if condition="{settings.advancedSearch}==1">
+				<f:then>
+					<f:form object="{search}" name="search" pageUid="{settings.listPid}" method="get" id="advancedsearchns">
+						<fieldset>
+							<f:if condition="{settings.searchCategories}">
+								<div class="form-group">
+									<label for="news-category"><f:translate key='search_sys_category' extensionName='ns_news_advancedsearch' />:</label>
+									<div class="row">
+										<f:for each="{settings.searchCategories}" as="category" iteration="index">
+											<div class="col-sm-4">
+												<label for="check{category.uid}">
+													<f:form.checkbox property="category" multiple="1" id="check{category.uid}" value="{category.uid}"/> <span>{category.title}</span>
+												</label>
+											</div>
+										</f:for>
+									</div>
+								</div>
+							</f:if>
+							<div class="form-group">
+								<label for="news-title"><f:translate id='search_title' extensionName='ns_news_advancedsearch' />:</label>
+								<f:form.textfield id="news-title" property="title" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="news-teaser"><f:translate id='search_teaser' extensionName='ns_news_advancedsearch' />:</label>
+								<f:form.textfield id="news-teaser" property="teaser" class="form-control"/>
+							</div>
+							<f:form.submit value="{f:translate(key:'search_start', extensionName: 'ns_news_advancedsearch')}" class="btn btn-secondary btn-submit"/><f:form.button type="reset" name="reset" class="mx-3 btn btn-secondary" value="reset" additionalAttributes="{'onclick': 'resetFunc()'}" >{f:translate(key:'reset', extensionName: 'ns_news_advancedsearch')}</f:form.button>
+						</fieldset>
+					</f:form>
+				</f:then>
+				<f:else>
+					<f:form object="{search}" name="search" pageUid="{settings.listPid}" method="get">
+						<fieldset>
+							<div class="form-group">
+								<label for="news-subject"><f:translate key="search-subject" /></label>
+								<f:form.textfield id="news-subject" property="subject" class="form-control"/>
+							</div>
+
+							<div class="form-group">
+								<label for="news-minimumDate"><f:translate key="search-minimumDate" /></label>
+								<f:form.textfield id="news-minimumDate" property="minimumDate" type="date" class="form-control"/>
+							</div>
+
+							<div class="form-group">
+								<label for="news-maximumDate"><f:translate key="search-maximumDate" /></label>
+								<f:form.textfield id="news-maximumDate" property="maximumDate" type="date" class="form-control"/>
+							</div>
+
+							<f:form.submit value="{f:translate(key:'search_start', extensionName: 'ns_news_advancedsearch')}" class="btn btn-secondary"/>
+
+						</fieldset>
+					</f:form>
+				</f:else>
+			</f:if>
+		</div>
+	</f:section>
+</html>

@@ -11,8 +11,8 @@ page {
     logo {
         file = EXT:biobauernhof/Resources/Public/Images/logo.svg
         fileInverted = EXT:biobauernhof/Resources/Public/Images/logo-inverted.svg
-        height = 52
-        width = 192
+        height = 130
+        width = 300
         alt = biobauernhof
         linktitle = biobauernhof
     }
@@ -59,13 +59,24 @@ plugin.bootstrap_package.settings.scss {
     secondary = #013859
 }
 
-#footer navigation TODO
+page.theme.footernavigation{
+    navigationType = Drectory
+    navigationValue = 36
+    enable = 1
+}
+
 
 #news
 plugin.tx_news.view.twb5{
     templateRootPath = EXT:biobauernhof/Resources/Private/Templates/
     partialRootPath = EXT:biobauernhof/Resources/Private/Partials/
     layoutRootPath = EXT:biobauernhof/Resources/Private/Layouts/
+}
+
+#advanced
+plugin.ns_news_advancedsearch.view{
+    templateRootPath = EXT:biobauernhof/Resources/Private/Templates/Search/
+    partialRootPath = EXT:biobauernhof/Resources/Private/Templates/Search/
 }
 
 #login damit auch weiß, dass von uns nehmen soll

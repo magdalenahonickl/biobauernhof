@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-11-08UTC09:49:030">
+        <header>
+            <authorName>Magdalena Hönickl</authorName>
+            <authorEmail>hoenicklmagdalena@gmail.com</authorEmail>
+        </header>
+        <body>
+        <trans-unit id="search">
+            <source>Search</source>
+            <target>Suche</target>
+         </trans-unit>
+         <trans-unit id="all_categories">
+            <source>All categories</source>
+            <target>Alle anzeigen</target>
+         </trans-unit>
+         <trans-unit id="more-link" xml:space="preserve">
+                <source>Read more</source>
+                <target>Hier gehts zu den Details</target>
+         </trans-unit>
+         <trans-unit id="relatedNews">
+                         <source>related recipes</source>
+                         <target>ähnliche Rezepte</target>
+                 </trans-unit>
+        </body>
+    </file>
+</xliff>

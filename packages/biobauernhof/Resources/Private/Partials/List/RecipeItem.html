@@ -9,8 +9,11 @@
             <n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link>
         </h3>
         <div class="recipe-meta">
-            <f:if condition="{newsItem.duration}">
-                <span class="recipe-time">{newsItem.duration} min</span>
+            <f:if condition="{newsItem.teaser}">
+                <div class="recipe-time">
+                    <span class="time-icon">⏱</span>
+                    {newsItem.teaser}
+                </div>
             </f:if>
             <f:if condition="{newsItem.categories}">
                 <span class="recipe-season">{newsItem.categories.0.title}</span>

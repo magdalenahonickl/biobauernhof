@@ -4,12 +4,15 @@
 @import 'EXT:mask/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:news/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:news/Configuration/TypoScript/Styles/Twb5/setup.typoscript'
+@import 'EXT:ns-news-advanced/Configruation/TypoScript/setup.typoscript'
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
 
 
 ##############
 #### PAGE ####
 ##############
+page.config.contentObjectExceptionHandler = 0
+
 page {
     includeCSS {
         theme = EXT:biobauernhof/Resources/Public/Scss/Theme/theme.scss
@@ -19,7 +22,7 @@ page {
         recipe = EXT:your_extension/Resources/Public/Scss/Theme/recipe.css
         footer = EXT:biobauernhof/Resources/Public/Scss/Theme/footer.scss
         recipelist = EXT:your_extension/Resources/Public/Scss/Theme/recipelist.scss
-        recipelist = EXT:your_extension/Resources/Public/Scss/Theme/product.css
+        product = EXT:your_extension/Resources/Public/Scss/Theme/product.css
     }
 
     includeJSLibs {
@@ -36,7 +39,7 @@ page {
 
     includeJSFooter {
         biobauernhof_scripts = EXT:biobauernhof/Resources/Public/JavaScript/Dist/scripts.js
-        slider = EXT:biobauernhof/Resources/Public/JavaScript/slider.js
+        slider = EXT:biobauernhof/Resources/Public/JavaScript/Dist/slider.js
     }
 }
 
@@ -71,26 +74,9 @@ tt_content.mask_product{
     }
 }
 
-# Definiere die Header Layouts
-lib.contentElement.headers = COA
-lib.contentElement.headers {
-    30 = TEXT
-    30 {
-        field = header
-        wrap = <h1>|</h1>
-    }
-
-    31 = TEXT
-    31 {
-        field = subheader
-        wrap = <h2>|</h2>
-    }
-
-    # Layout für "Reverted" Header und Subheader (Option 30)
-    32 = TEXT
-    32 {
-        data = TSFE:page|header_layout
-        wrap = <div class="reverted">|</div>
-        if.isTrue = 11
-    }
+#content element für den footer
+lib.record = RECORDS
+lib.record{
+    tables = tt_content
+    source = 200
 }

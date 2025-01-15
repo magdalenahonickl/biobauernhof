@@ -1,0 +1,18 @@
+<f:if condition="{data.tx_mask_slider}">
+    <div class="image-band-container">
+        <!-- Bilder-Band -->
+        <div class="image-band" id="image-band">
+            <f:for each="{data.tx_mask_slider}" as="data_item">
+                <f:for each="{data_item.tx_mask_image}" as="file">
+                    <div class="image-item">
+                        <f:media file="{file}" width="200" alt="{file.alternative}" />
+                        <div class="image-description">{file.description}</div>
+                    </div>
+                </f:for>
+            </f:for>
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="band-button band-button-prev" id="band-prev">‹</button>
+        <button class="band-button band-button-next" id="band-next">›</button>
+    </div>
+</f:if>
